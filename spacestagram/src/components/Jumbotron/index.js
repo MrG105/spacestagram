@@ -1,19 +1,17 @@
 import React from "react";
-import { Jumbotron as Jumbo, Container } from 'react-bootstrap'
 import styled from 'styled-components'
 
 const Styles = styled.div``;
 
 export const Jumbotron = () => (
     <Styles>
-        <Jumbo fluid className="jumbo">
-            <div className="overlay"></div>
-            <Container>
-                <h1>Welcome</h1> 
-                <p>Spacestagram thing Idk we will see</p>
-            </Container>
-
-        </Jumbo>
+        <div class="container-fluid bg-light text-dark p-5">
+        <div class="container bg-light p-5">
+            <h1 class="display-4 fw-bold">Welcome to Spacestagram</h1>
+             <hr />
+            <p>Browse the latest and greatest images directly from NASA's Astronomy Picture of the Day</p>
+        </div>
+        </div>
     </Styles>
 
 )

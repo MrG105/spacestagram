@@ -1,6 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-// import { Router, Switch } from 'react-router'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Home } from './components/Home';
@@ -8,12 +7,16 @@ import { Home } from './components/Home';
 // import { NoMatch } from './components/NoMatch'
 import { Layout } from './components/Layout';
 import { NavigationBar } from './components/Navbar';
+import { Jumbotron } from './components/Jumbotron';
+import { ImageCard } from './components/ImageCard';
+
 
 
 function App() {
   return (
     <React.Fragment>
       <NavigationBar />
+      <Jumbotron />
       <Layout>
       <Router>
         <Routes>
@@ -23,6 +26,7 @@ function App() {
 
         </Routes>
       </Router>
+      <ImageCard />
       </Layout>
 
     </React.Fragment>
