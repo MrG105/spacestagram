@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
-import { Card, Button, Spinner } from "react-bootstrap";
+import { Card, Spinner } from "react-bootstrap";
 import axios from "axios";
+import Like from "../LikeButton";
 
 export const ImageCard = () => {
   const url =
     "https://api.nasa.gov/planetary/apod?api_key=NqbQ1Xsle1CiFcwfX5k7hMU7hGTsMJX3C5ZoaOQu";
   const [imageInfo, setImageInfo] = useState(null);
-  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     axios.get(url).then((response) => {
       setImageInfo(response.data);
-      setLoading(true);
     });
   }, [url]);
   if (imageInfo) {
@@ -22,7 +21,7 @@ export const ImageCard = () => {
           <Card.Title>{imageInfo.date}</Card.Title>
           <Card.Title>Copyright: {imageInfo.copyright}</Card.Title>
           <Card.Text>{imageInfo.explanation}</Card.Text>
-          <Button variant="primary">Like</Button>
+          <Like />
         </Card.Body>
       </Card>
     );
